@@ -1,2 +1,17 @@
-credit <- read.csv("D:/clustering_data.csv")
+/*credit <- read.csv("D:/clustering_data.csv")
 str(credit)
+*/
+
+
+
+from sklearn import datasets
+import pandas as pd
+iris = datasets.load_iris()
+
+labels = pd.DataFrame(iris.target)
+labels.columns=['labels']
+data = pd.DataFrame(iris.data)
+data.columns=['Sepal length','Sepal width','Petal length','Petal width']
+data = pd.concat([data,labels],axis=1)
+
+data.head()
